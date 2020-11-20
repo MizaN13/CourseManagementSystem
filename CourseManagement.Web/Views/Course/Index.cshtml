@@ -1,0 +1,130 @@
+﻿@model IEnumerable<CourseManagement.Web.ViewModels.CourseViewModel>
+
+
+
+@{
+    ViewData["Title"] = "Course";
+}
+
+<h4>Course Register</h4>
+<hr />
+
+<a asp-action="Add" class="btn btn-outline-success"><i class="fa fa-plus-square"></i>Add</a>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Target
+            </th>
+            <th>
+                Level
+            </th>
+            <th>
+                Fee
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Prerequisite
+            </th>
+            <th>
+                CourseHighlight
+            </th>
+            <th>
+                Classes
+            </th>
+            <th>
+                Lessons
+            </th>
+            <th>
+                Duration
+            </th>
+            <th>
+                Bath No
+            </th>
+            <th>
+                ClassDays
+            </th>
+            <th>
+                Time
+            </th>
+            <th>
+                Registration Close
+            </th>
+            <th>
+                Class Start
+            </th>
+            <th>
+                
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Target)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Level)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fee)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prerequisite)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseHighlight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Classes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Lessons)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Duration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BatchNo)
+            </td>
+            <td>
+                @Html.DisplayFor(ModelItem => item.ClassDays)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Time)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RegClose)
+            </td>
+            <td>
+                @Html.DisplayFor(ModelItem => item.ClassStart)
+            </td>
+
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id"><span class="fa fa-marker fa-lg"></span></a>
+
+                <a asp-action="Delete" asp-route-id="@item.Id" class="text-danger ml-1" onclick="return confirm('Are you sure to delete this record?')"><span class="fa fa-trash-alt"></span></a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+
