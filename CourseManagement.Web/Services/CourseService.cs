@@ -24,7 +24,8 @@ namespace CourseManagement.Web.Services
             _courseRepository.Add(entity);
             var course = _courseRepository
                 .Get<Student>(
-                    c => c.Name.Equals(entity.Name, StringComparison.OrdinalIgnoreCase)
+                    c => c.Name == entity.Name
+
                 );
             return new CourseViewModel()
             {
@@ -63,7 +64,7 @@ namespace CourseManagement.Web.Services
         public IQueryable<CourseViewModel> Get()
         {
             var courseList = new List<CourseViewModel>();
-            foreach (var course in _courseRepository.Get().Include(c => c.Students))
+            foreach (var course in _courseRepository.Get())
             {
 
                 var vm = new CourseViewModel()

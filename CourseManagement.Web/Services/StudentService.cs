@@ -23,7 +23,7 @@ namespace CourseManagement.Web.Services
             _studentRepository.Add(entity);
             var student = _studentRepository
                 .Get<Course>(
-                    c => c.Name.Equals(entity.Name, StringComparison.OrdinalIgnoreCase)
+                    s => s.Name == entity.Name
                 );
             return new StudentViewModel()
             {
@@ -56,7 +56,7 @@ namespace CourseManagement.Web.Services
 
         public IQueryable<StudentViewModel> Get()
         {
-            var courseList = new List<StudentViewModel>();
+            var studentList = new List<StudentViewModel>();
             foreach (var student in _studentRepository.Get().Include(s => s.Courses))
             {
 
@@ -76,9 +76,9 @@ namespace CourseManagement.Web.Services
                     Result = student.Result
                 };
 
-                courseList.Add(vm);
+                studentList.Add(vm);
             }
-            return courseList.AsQueryable();
+            return studentList.AsQueryable();
         }
 
         public StudentViewModel Get(Guid id)

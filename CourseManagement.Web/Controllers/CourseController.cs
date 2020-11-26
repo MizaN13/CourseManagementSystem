@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace CourseManagement.Web.Controllers
 {
+    [Route("[controller]/[action]")]
     public class CourseController : Controller
     {
         private readonly ICourseService  _courseService;
@@ -15,6 +16,7 @@ namespace CourseManagement.Web.Controllers
         {
             _courseService = courseService;
         }
+
         public IActionResult Index()
         {
             var vm = new CourseViewModel(_courseService);
@@ -42,7 +44,7 @@ namespace CourseManagement.Web.Controllers
             vm.SetService(_courseService);
 
             vm.Create();
-            if (_courseService.Get(s => s.Name.Equals(vm.Name, System.StringComparison.OrdinalIgnoreCase)) != null)
+            if (_courseService.Get(s => s.Name == vm.Name) != null)
                 return RedirectToAction("Index");
             return View(vm);
         }

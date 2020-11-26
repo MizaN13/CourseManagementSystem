@@ -50,14 +50,16 @@ namespace CourseManagement.Web.Services
         public IQueryable<EnrollmentViewModel> Get()
         {
             var enrollmentList = new List<EnrollmentViewModel>();
-            foreach (var enrollment in _enrollmentRepository.Get().Include(e => e.Student))
+            foreach (var enrollment in _enrollmentRepository.Get().Include(e => e.Student).Include(e => e.Course))
             {
 
                 var vm = new EnrollmentViewModel()
                 {
                     Id = enrollment.Id,
                     StudentId = enrollment.StudentId,
-                    CourseId = enrollment.CourseId
+                    CourseId = enrollment.CourseId,
+                    Student = enrollment.Student,
+                    Course = enrollment.Course
                 };
 
                 enrollmentList.Add(vm);
@@ -87,10 +89,13 @@ namespace CourseManagement.Web.Services
             {
                 Id = e.Id,
                 StudentId = e.StudentId,
-                CourseId = e.CourseId
+                CourseId = e.CourseId,
+                Student = e.Student,
+                Course = e.Course
+
 
             };
-            vm.SetService(this as IEnrollmentService);
+            vm.SetService(this);
             return vm;
         }
         public EnrollmentViewModel Get<U>(Expression<Func<Enrollment, bool>> predicate, Expression<Func<Enrollment, U>> includePredicate)

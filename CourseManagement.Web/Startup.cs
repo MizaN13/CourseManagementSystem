@@ -33,21 +33,27 @@ namespace CourseManagement.Web
             var connectionString = Configuration.GetConnectionString(connectionStringName);
             var migrationAssemblyName = typeof(Startup).Assembly.FullName;
             services.AddDbContext<SchoolContext>(
-                options => options.UseSqlServer(
-                    connectionString,
-                    b => b.MigrationsAssembly(migrationAssemblyName)
-                )
+                options =>
+                {
+                    options.EnableSensitiveDataLogging(true);
+                    options.EnableDetailedErrors(true);
+                    options.UseSqlServer(
+                        connectionString,
+                        b => b.MigrationsAssembly(migrationAssemblyName)
+                    );
+                }
             );
-            services.AddScoped<DbContext>(sp => new SchoolContext(connectionStringName, migrationAssemblyName));
+            //services.AddScoped<SchoolContext>(sp => new SchoolContext(connectionStringName, migrationAssemblyName));
 
-            services.AddTransient<IStudentService, StudentService>();
-            services.AddTransient<ICourseService, CourseService>();
-            services.AddTransient<IInstructorService, InstructorService>();
-            services.AddTransient<IEnrollmentService, EnrollmentService>();
             services.AddTransient<StudentRepository>();
             services.AddTransient<CourseRepository>();
             services.AddTransient<InstructorRepository>();
             services.AddTransient<EnrollmentRepository>();
+            services.AddTransient<IStudentService, StudentService>();
+            services.AddTransient<ICourseService, CourseService>();
+            services.AddTransient<IInstructorService, InstructorService>();
+            services.AddTransient<IEnrollmentService, EnrollmentService>();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -29,14 +29,18 @@ namespace CourseManagement.Web.Data
 
         }
 
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionBuilder)
-        //{
-        //    if (!optionBuilder.IsConfigured)
-        //        optionBuilder.UseSqlServer(
-        //            _connectionString,
-        //            b => b.MigrationsAssembly(_migrationAssemblyName)
-        //        );
-        //}
+        protected override void OnConfiguring(DbContextOptionsBuilder optionBuilder)
+        {
+            if (!optionBuilder.IsConfigured)
+            {
+                optionBuilder.EnableSensitiveDataLogging(true);
+                optionBuilder.EnableDetailedErrors(true);
+                optionBuilder.UseSqlServer(
+                    _connectionString,
+                    b => b.MigrationsAssembly(_migrationAssemblyName)
+                );
+            }
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

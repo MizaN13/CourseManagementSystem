@@ -4,127 +4,255 @@
 
 @{
     ViewData["Title"] = "Course";
+    Layout = "~/Views/Shared/AdminLTE/_Layout.cshtml";
 }
 
 <h4>Course Register</h4>
 <hr />
 
-<a asp-action="Add" class="btn btn-outline-success"><i class="fa fa-plus-square"></i>Add</a>
-<table class="table table-hover">
-    <thead>
-        <tr>
-            <th>
-                Name
-            </th>
-            <th>
-                Target
-            </th>
-            <th>
-                Level
-            </th>
-            <th>
-                Fee
-            </th>
-            <th>
-                Description
-            </th>
-            <th>
-                Prerequisite
-            </th>
-            <th>
-                CourseHighlight
-            </th>
-            <th>
-                Classes
-            </th>
-            <th>
-                Lessons
-            </th>
-            <th>
-                Duration
-            </th>
-            <th>
-                Bath No
-            </th>
-            <th>
-                ClassDays
-            </th>
-            <th>
-                Time
-            </th>
-            <th>
-                Registration Close
-            </th>
-            <th>
-                Class Start
-            </th>
-            <th>
-                
-            </th>
+<a asp-action="Add" class="btn btn-outline-success"><i class="fa fa-plus-square" aria-hidden="true"></i> Add</a>
+@*@if (Model == null || Model.Count() == 0)
+    {
+        <h3>NO Course Available</h3>
+    }
+    else
+    {
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Target
+                    </th>
+                    <th>
+                        Level
+                    </th>
+                    <th>
+                        Fee
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                    <th>
+                        Prerequisite
+                    </th>
+                    <th>
+                        CourseHighlight
+                    </th>
+                    <th>
+                        Classes
+                    </th>
+                    <th>
+                        Lessons
+                    </th>
+                    <th>
+                        Duration
+                    </th>
+                    <th>
+                        Batch No
+                    </th>
+                    <th>
+                        ClassDays
+                    </th>
+                    <th>
+                        Time
+                    </th>
+                    <th>
+                        Registration Close
+                    </th>
+                    <th>
+                        Class Start
+                    </th>
+                    <th>
 
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Type)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Target)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Level)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Fee)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Prerequisite)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CourseHighlight)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Classes)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Lessons)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Duration)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BatchNo)
-            </td>
-            <td>
-                @Html.DisplayFor(ModelItem => item.ClassDays)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Time)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RegClose)
-            </td>
-            <td>
-                @Html.DisplayFor(ModelItem => item.ClassStart)
-            </td>
+                    </th>
 
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id"><span class="fa fa-marker fa-lg"></span></a>
+                </tr>
+            </thead>
+            <tbody>
 
-                <a asp-action="Delete" asp-route-id="@item.Id" class="text-danger ml-1" onclick="return confirm('Are you sure to delete this record?')"><span class="fa fa-trash-alt"></span></a>
-            </td>
-        </tr>
-        }
-    </tbody>
-</table>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Type)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Target)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Level)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Fee)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Prerequisite)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CourseHighlight)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Classes)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Lessons)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Duration)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BatchNo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(ModelItem => item.ClassDays)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Time)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.RegClose)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(ModelItem => item.ClassStart)
+                        </td>
+
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.Id"><span class="fa fa-marker fa-lg"></span></a>
+
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="text-danger ml-1" onclick="return confirm('Are you sure to delete this record?')"><span class="fa fa-trash-alt"></span></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }*@
 
 
+<div class="card-header">
+    <h3 class="card-title">Course List</h3>
+</div>
+<div class="card-body">
+    <div id="example1_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
+        <div class="row"><div class="col-sm-12 col-md-6"><div class="dataTables_length" id="example1_length"><label>Show <select name="example1_length" aria-controls="example1" class="form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div></div><div class="col-sm-12 col-md-6"><div id="example1_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="example1"></label></div></div></div><div class="row">
+            <div class="col-sm-12">
+                @if (Model == null || Model.Count() == 0)
+                {
+                    <h3>NO Course Available</h3>
+                }
+                else
+                {
+                    <table id="example1" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
+                        <thead>
+                            <tr role="row">
+                                <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 164px;">Name</th>
+                                <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Type: activate to sort column descending" style="width: 164px;">Type</th>
+                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Target: activate to sort column ascending" style="width: 212px;">Target</th>
+                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Level: activate to sort column ascending" style="width: 188px;">Level</th>
+                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Fee: activate to sort column ascending" style="width: 139px;">Description</th>
+                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Pre Requisite: activate to sort column ascending" style="width: 97px;">Prerequisite</th>
+                                <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="CourseHighlite: activate to sort column descending" style="width: 164px;">CourseHighlite</th>
+                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Classes: activate to sort column ascending" style="width: 212px;">Classes</th>
+                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Lessons: activate to sort column ascending" style="width: 188px;">Lessons</th>
+                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Duration: activate to sort column ascending" style="width: 139px;">Duration</th>
+                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Batch no: activate to sort column ascending" style="width: 97px;">Batch no</th>
+                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="ClassDays: activate to sort column ascending" style="width: 212px;">ClassDays</th>
+                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Time: activate to sort column ascending" style="width: 188px;">Time</th>
+                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="RegClose: activate to sort column ascending" style="width: 139px;">RegClose</th>
+                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="ClassStart: activate to sort column ascending" style="width: 97px;">ClassStart</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr role="row" class="odd">
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Name)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Type)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Target)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Level)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Fee)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Description)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Prerequisite)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.CourseHighlight)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Classes)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Lessons)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Duration)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.BatchNo)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(ModelItem => item.ClassDays)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Time)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.RegClose)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(ModelItem => item.ClassStart)
+                                    </td>
+
+                                    <td>
+                                        <a asp-action="Edit" asp-route-id="@item.Id"><span class="fa fa-marker fa-lg"></span></a>
+
+                                        <a asp-action="Delete" asp-route-id="@item.Id" class="text-danger ml-1" onclick="return confirm('Are you sure to delete this record?')"><span class="fa fa-trash-alt"></span></a>
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+                        <tfoot>
+                            <tr role="row">
+                                <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 164px;">Type</th>
+                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Target: activate to sort column ascending" style="width: 212px;">Target</th>
+                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Level: activate to sort column ascending" style="width: 188px;">Level</th>
+                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Fee: activate to sort column ascending" style="width: 139px;">Description</th>
+                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Pre Requisite: activate to sort column ascending" style="width: 97px;">Prerequisite</th>
+                                <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="CourseHighlite: activate to sort column descending" style="width: 164px;">CourseHighlite</th>
+                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Classes: activate to sort column ascending" style="width: 212px;">Classes</th>
+                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Lessons: activate to sort column ascending" style="width: 188px;">Lessons</th>
+                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Duration: activate to sort column ascending" style="width: 139px;">Duration</th>
+                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Batch no: activate to sort column ascending" style="width: 97px;">Batch no</th>
+                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="ClassDays: activate to sort column ascending" style="width: 212px;">ClassDays</th>
+                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Time: activate to sort column ascending" style="width: 188px;">Time</th>
+                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="RegClose: activate to sort column ascending" style="width: 139px;">RegClose</th>
+                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="ClassStart: activate to sort column ascending" style="width: 97px;">ClassStart</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                }
+            </div>
+        </div><div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="example1_info" role="status" aria-live="polite">Showing 1 to 10 of 57 entries</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="example1_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="example1_previous"><a href="#" aria-controls="example1" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li><li class="paginate_button page-item active"><a href="#" aria-controls="example1" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="2" tabindex="0" class="page-link">2</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="3" tabindex="0" class="page-link">3</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="4" tabindex="0" class="page-link">4</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="5" tabindex="0" class="page-link">5</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="6" tabindex="0" class="page-link">6</a></li><li class="paginate_button page-item next" id="example1_next"><a href="#" aria-controls="example1" data-dt-idx="7" tabindex="0" class="page-link">Next</a></li></ul></div></div></div>
+    </div>
+</div>

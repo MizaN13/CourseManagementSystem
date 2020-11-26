@@ -47,10 +47,9 @@ namespace CourseManagement.Web.ViewModels
 
         public void Create()
         {
-            var id = Guid.NewGuid();
+            
             var course = new Course
             {
-                Id = id,
                 Name = Name,
                 Type = Type,
                 Target = Target,

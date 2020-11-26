@@ -68,6 +68,35 @@ namespace CourseManagement.Web.ViewModels
             //_studentService.Edit(student);
         }
 
+        public void Update(Guid id, StudentViewModel vm)
+        {
+            var student = new Student
+            {
+                Id = id,
+                Name = Name,
+                Email = Email,
+                Telephone = Telephone,
+                Country = Country,
+                DateOfBirth = DateOfBirth,
+                Gender = Gender,
+                Biography = Biography,
+                InstituteName = InstituteName,
+                DegreeTitle = DegreeTitle,
+                PassingYear = PassingYear,
+                Result = Result,
+            };
+            //foreach (var d in vm.Departments)
+            //{
+
+
+            //}
+            _studentService.Edit(student);
+        }
+        public void Delete()
+        {
+            _studentService.Delete(new Student { Name = Name });
+        }
+
         public IQueryable<StudentViewModel> Read()
         {
             return _studentService.Get();

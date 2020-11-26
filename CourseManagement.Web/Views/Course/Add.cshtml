@@ -3,111 +3,126 @@
 
 @{
     ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/AdminLTE/_Layout.cshtml";
 }
+
+<style type="text/css">
+    /*.ui-front
+            {
+                z-index: 1051;
+            }*/
+    #btnBack, #btnNotify {
+        font-weight: 800;
+        font-size: 13px;
+        text-transform: capitalize;
+    }
+
+    .lastSavedCode {
+        margin-left: 0px;
+        color: rgb(255, 8, 133);
+    }
+
+        .lastSavedCode > label {
+            float: left;
+            padding-right: 10px;
+            color: rgb(255, 8, 133) !important;
+        }
+
+    .form-horizontal .form-group.form-md-line-input {
+        margin: 0px -15px 0px;
+    }
+
+    .datepicker.dropdown-menu {
+        z-index: 999999 !important;
+    }
+
+    .disabledbutton {
+        pointer-events: none;
+        opacity: 0.5;
+    }
+
+    .warning {
+        color: #efc016 !important;
+    }
+</style>
 
 <h4>Course Form</h4>
 <hr />
-<div class="row">
-    <div class="col-md-6">
-        <form asp-controller="Student" asp-action="Add" method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
+
+@*<div class="row">
+    <form asp-controller="Course" asp-action="Add" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Id" />
+        <div class="col-md-6">
             <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
+                <input asp-for="Name" class="form-control" placeholder="Enter name" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
-
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label asp-for="Type" class="control-label"></label>
-                    <input asp-for="Type" class="form-control" />
-                    <span asp-validation-for="Type" class="text-danger"></span>
-                </div>
-                <div class="form-group col-md-6">
-                    <div class="form-group col-md-6">
-                        <label asp-for="Target" class="control-label"></label>
-                        <input asp-for="Target" class="form-control" />
-                        <span asp-validation-for="Target" class="text-danger"></span>
-                    </div>
-                </div>
-
+            <div class="form-group">
+                <label asp-for="Type" class="control-label"></label>
+                <input asp-for="Type" class="form-control" />
+                <span asp-validation-for="Type" class="text-danger"></span>
             </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label asp-for="Level" class="control-label"></label>
-                    <input asp-for="Level" class="form-control" />
-                    <span asp-validation-for="Level" class="text-danger"></span>
-                </div>
-                <div class="form-group col-md-6">
-                    <div class="form-group col-md-6">
-                        <label asp-for="Fee" class="control-label"></label>
-                        <input asp-for="Fee" class="form-control" />
-                        <span asp-validation-for="Fee" class="text-danger"></span>
-                    </div>
-                </div>
-
+            <div class="form-group">
+                <label asp-for="Target" class="control-label"></label>
+                <input asp-for="Target" class="form-control" />
+                <span asp-validation-for="Target" class="text-danger"></span>
             </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label asp-for="Classes" class="control-label"></label>
-                    <input asp-for="Classes" class="form-control" />
-                    <span asp-validation-for="Classes" class="text-danger"></span>
-                </div>
-                <div class="form-group col-md-6">
-                    <div class="form-group col-md-6">
-                        <label asp-for="Lessons" class="control-label"></label>
-                        <input asp-for="Lessons" class="form-control" />
-                        <span asp-validation-for="Lessons" class="text-danger"></span>
-                    </div>
-                </div>
-
+            <div class="form-group">
+                <label asp-for="Level" class="control-label"></label>
+                <input asp-for="Level" class="form-control" />
+                <span asp-validation-for="Level" class="text-danger"></span>
             </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label asp-for="Duration" class="control-label"></label>
-                    <input asp-for="Duration" class="form-control" />
-                    <span asp-validation-for="Duration" class="text-danger"></span>
-                </div>
-                <div class="form-group col-md-6">
-                    <div class="form-group col-md-6">
-                        <label asp-for="BatchNo" class="control-label"></label>
-                        <input asp-for="BatchNo" class="form-control" />
-                        <span asp-validation-for="BatchNo" class="text-danger"></span>
-                    </div>
-                </div>
-
+            <div class="form-group">
+                <label asp-for="Fee" class="control-label"></label>
+                <input asp-for="Fee" class="form-control" />
+                <span asp-validation-for="Fee" class="text-danger"></span>
             </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label asp-for="ClassDays" class="control-label"></label>
-                    <input asp-for="ClassDays" class="form-control" />
-                    <span asp-validation-for="ClassDays" class="text-danger"></span>
-                </div>
-                <div class="form-group col-md-6">
-                    <div class="form-group col-md-6">
-                        <label asp-for="Time" class="control-label"></label>
-                        <input asp-for="Time" class="form-control" />
-                        <span asp-validation-for="Time" class="text-danger"></span>
-                    </div>
-                </div>
-
+            <div class="form-group">
+                <label asp-for="Classes" class="control-label"></label>
+                <input asp-for="Classes" class="form-control" />
+                <span asp-validation-for="Classes" class="text-danger"></span>
             </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label asp-for="RegClose" class="control-label"></label>
-                    <input asp-for="RegClose" class="form-control" />
-                    <span asp-validation-for="RegClose" class="text-danger"></span>
-                </div>
-                <div class="form-group col-md-6">
-                    <div class="form-group col-md-6">
-                        <label asp-for="ClassStart" class="control-label"></label>
-                        <input asp-for="ClassStart" class="form-control" />
-                        <span asp-validation-for="ClassStart" class="text-danger"></span>
-                    </div>
-                </div>
-
+            <div class="form-group">
+                <label asp-for="Lessons" class="control-label"></label>
+                <input asp-for="Lessons" class="form-control" />
+                <span asp-validation-for="Lessons" class="text-danger"></span>
             </div>
+
+        </div>
+        <div class="col-md-6 border-left">
+            <div class="form-group">
+                <label asp-for="Duration" class="control-label"></label>
+                <input asp-for="Duration" class="form-control" />
+                <span asp-validation-for="Duration" class="text-danger"></span>
+            </div>
+            <div class="form-group ">
+                <label asp-for="BatchNo" class="control-label"></label>
+                <input asp-for="BatchNo" class="form-control" />
+                <span asp-validation-for="BatchNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClassDays" class="control-label"></label>
+                <input asp-for="ClassDays" class="form-control" />
+                <span asp-validation-for="ClassDays" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Time" class="control-label"></label>
+                <input asp-for="Time" class="form-control" />
+                <span asp-validation-for="Time" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RegClose" class="control-label"></label>
+                <input asp-for="RegClose" class="form-control" />
+                <span asp-validation-for="RegClose" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClassStart" class="control-label"></label>
+                <input asp-for="ClassStart" class="form-control" />
+                <span asp-validation-for="ClassStart" class="text-danger"></span>
+            </div>
+
             <div class="form-group">
                 <label asp-for="CourseHighlight" class="control-label"></label>
                 <input asp-for="CourseHighlight" class="form-control" />
@@ -124,17 +139,150 @@
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
 
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <input type="submit" value="Submit" class="btn btn-primary btn-block" />
+            </div>
+            <div class="form-group col-md-6">
+                <a asp-action="Index" class="btn btn-secondary btn-block"><i class="fa fa-table"></i>Back to List</a>
+            </div>
+        </div>
+    </form>
+</div>*@
 
-            <div class="form-row">
+
+
+<div class="col-md-6">
+    <form asp-controller="Course" asp-action="Add" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Id" />
+        <div class="form-group">
+            <label asp-for="Name" class="control-label"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <div class="form-row">
+
+            <div class="form-group col-md-6">
+                <label asp-for="Type" class="control-label"></label>
+                <input asp-for="Type" class="form-control" />
+                <span asp-validation-for="Type" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-6">
                 <div class="form-group col-md-6">
-                    <input type="submit" value="Submit" class="btn btn-primary btn-block" />
-                </div>
-                <div class="form-group col-md-6">
-                    <a asp-action="Index" class="btn btn-secondary btn-block"><i class="fa fa-table"></i>Back to List</a>
+                    <label asp-for="Target" class="control-label"></label>
+                    <input asp-for="Target" class="form-control" />
+                    <span asp-validation-for="Target" class="text-danger"></span>
                 </div>
             </div>
-        </form>
-    </div>
+
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label asp-for="Level" class="control-label"></label>
+                <input asp-for="Level" class="form-control" />
+                <span asp-validation-for="Level" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <div class="form-group col-md-6">
+                    <label asp-for="Fee" class="control-label"></label>
+                    <input asp-for="Fee" class="form-control" />
+                    <span asp-validation-for="Fee" class="text-danger"></span>
+                </div>
+            </div>
+
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label asp-for="Classes" class="control-label"></label>
+                <input asp-for="Classes" class="form-control" />
+                <span asp-validation-for="Classes" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <div class="form-group col-md-6">
+                    <label asp-for="Lessons" class="control-label"></label>
+                    <input asp-for="Lessons" class="form-control" />
+                    <span asp-validation-for="Lessons" class="text-danger"></span>
+                </div>
+            </div>
+
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label asp-for="Duration" class="control-label"></label>
+                <input asp-for="Duration" class="form-control" />
+                <span asp-validation-for="Duration" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <div class="form-group col-md-6">
+                    <label asp-for="BatchNo" class="control-label"></label>
+                    <input asp-for="BatchNo" class="form-control" />
+                    <span asp-validation-for="BatchNo" class="text-danger"></span>
+                </div>
+            </div>
+
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label asp-for="ClassDays" class="control-label"></label>
+                <input asp-for="ClassDays" class="form-control" />
+                <span asp-validation-for="ClassDays" class="text-danger"></span>
+            </div>
+
+            
+            <div class="form-group col-md-6">
+                <div class="form-group col-md-6">
+                    <label asp-for="Time" class="control-label"></label>
+                    <input asp-for="Time" class="form-control" />
+                    <span asp-validation-for="Time" class="text-danger"></span>
+                </div>
+            </div>
+
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label asp-for="RegClose" class="control-label"></label>
+                <input asp-for="RegClose" class="form-control" />
+                <span asp-validation-for="RegClose" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <div class="form-group col-md-6">
+                    <label asp-for="ClassStart" class="control-label"></label>
+                    <input asp-for="ClassStart" class="form-control" />
+                    <span asp-validation-for="ClassStart" class="text-danger"></span>
+                </div>
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label asp-for="CourseHighlight" class="control-label"></label>
+            <input asp-for="CourseHighlight" class="form-control" />
+            <span asp-validation-for="CourseHighlight" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Prerequisite" class="control-label"></label>
+            <input asp-for="Prerequisite" class="form-control" />
+            <span asp-validation-for="Prerequisite" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Description" class="control-label"></label>
+            <input asp-for="Description" class="form-control" />
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <input type="submit" value="Submit" class="btn btn-primary btn-block" />
+            </div>
+            <div class="form-group col-md-6">
+                <a asp-action="Index" class="btn btn-secondary btn-block"><i class="fa fa-table"></i>Back to List</a>
+            </div>
+        </div>
+    </form>
+</div>
 </div>
 
 @section Scripts {
