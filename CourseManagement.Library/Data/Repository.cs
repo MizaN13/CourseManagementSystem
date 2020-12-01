@@ -1,4 +1,4 @@
-﻿using CourseManagement.Web.Data.Entities;
+﻿using CourseManagement.Library.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 
-namespace CourseManagement.Web.Data
+namespace CourseManagement.Library.Data
 {
     public abstract class Repository<T, TContext>
         : Repository<T, Guid, TContext>, IRepository<T>

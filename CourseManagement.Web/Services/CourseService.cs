@@ -1,5 +1,5 @@
-﻿using CourseManagement.Web.Data;
-using CourseManagement.Web.Data.Entities;
+﻿using CourseManagement.Library.Data;
+using CourseManagement.Library.Data.Entities;
 using CourseManagement.Web.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using System;

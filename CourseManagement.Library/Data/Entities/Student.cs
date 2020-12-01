@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CourseManagement.Web.Data.Entities
+namespace CourseManagement.Library.Data.Entities
 {
     public class Student : EntityBase<Guid>
     {

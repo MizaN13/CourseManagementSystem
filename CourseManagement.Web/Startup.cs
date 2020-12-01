@@ -1,5 +1,4 @@
 using CourseManagement.Library.Data;
-using CourseManagement.Web.Data;
 using CourseManagement.Web.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;

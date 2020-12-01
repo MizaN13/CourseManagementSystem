@@ -1,0 +1,79 @@
+﻿@model EnrollmentViewModel
+
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/AdminLTE/_Layout.cshtml";
+}
+
+<style type="text/css">         
+
+    .form-horizontal .form-group.form-md-line-input {
+        margin: 0px -15px 0px;
+    }
+
+    .datepicker.dropdown-menu {
+        z-index: 999999 !important;
+    }
+
+    
+
+    .warning {
+        color: #efc016 !important;
+    }
+</style>
+
+<h4>Enrollment Form</h4>
+<hr />
+
+
+<div class="row">
+    <div class="col-md-12">
+        <form asp-controller="Enrollment" asp-action="Add" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group col-md-6">
+                <label asp-for="StudentId" class="control-label"></label>
+                <select asp-for="StudentId"
+                        asp-items="@ViewBag.Students"
+                        class="form-control">
+                </select>
+                <span asp-validation-for="Student" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="CourseId" class="control-label"></label>
+                <select asp-for="CourseId"
+                        asp-items="@ViewBag.Courses"
+                        class="form-control">
+                </select>
+                <span asp-validation-for="Course" class="text-danger"></span>
+            </div>
+
+            @*<div class="form-group">
+                    <label asp-for="Student" class="control-label"></label>
+                    <input asp-for="StudentId" class="form-control" />
+                    <span asp-validation-for="StudentId" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Course" class="control-label"></label>
+                    <input asp-for="CourseId" class="form-control" />
+                    <span asp-validation-for="CourseId" class="text-danger"></span>
+                </div>*@
+            @*<div class="form-group">
+                    <label asp-for="Telephone" class="control-label"></label>
+                    <input asp-for="Telephone" class="form-control" />
+                    <span asp-validation-for="Telephone" class="text-danger"></span>
+                </div>*@
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <input type="submit" value="Submit" class="btn btn-primary btn-block" />
+                </div>
+                <div class="form-group col-md-6">
+                    <a asp-action="Index" class="btn btn-secondary btn-block"><i class="fa fa-table"></i>Back to List</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,4 +1,4 @@
-﻿using CourseManagement.Web.Data.Entities;
+﻿using CourseManagement.Library.Data.Entities;
 using CourseManagement.Web.ViewModels;
 using System;
 using System.Collections.Generic;

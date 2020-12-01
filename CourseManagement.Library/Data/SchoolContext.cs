@@ -1,11 +1,11 @@
-﻿using CourseManagement.Web.Data.Entities;
+﻿using CourseManagement.Library.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ValueGeneration;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace CourseManagement.Web.Data
+namespace CourseManagement.Library.Data
 {
     public class SchoolContext : DbContext
     {

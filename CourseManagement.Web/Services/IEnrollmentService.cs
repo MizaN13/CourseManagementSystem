@@ -1,4 +1,4 @@
-﻿using CourseManagement.Web.Data.Entities;
+﻿using CourseManagement.Library.Data.Entities;
 using CourseManagement.Web.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ namespace CourseManagement.Web.Services
 {
     public interface IEnrollmentService
     {
-        //EnrollmentViewModel Create(Enrollment entity);
+        EnrollmentViewModel Create(Enrollment entity);
 
         void Edit(Enrollment e);
         void Delete(Enrollment e);

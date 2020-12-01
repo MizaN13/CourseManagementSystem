@@ -1,6 +1,5 @@
 ﻿using CourseManagement.Library.Data;
-using CourseManagement.Web.Data;
-using CourseManagement.Web.Data.Entities;
+using CourseManagement.Library.Data.Entities;
 using CourseManagement.Web.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -21,21 +20,27 @@ namespace CourseManagement.Web.Services
         {
             _enrollmentRepository = enrollmentRepository;
         }
-        //public EnrollmentViewModel Create(Enrollment entity)
-        //{
-        //    _enrollmentRepository.Add(entity);
-        //    var enrollment = _enrollmentRepository
-        //        .Get<Student>(
-        //            e => e.StudentId.Equals(entity.StudentId, StringComparison.OrdinalIgnoreCase)
-        //        );
-        //    return new EnrollmentViewModel()
-        //    {
-        //        Id = enrollment.Id,
-        //        StudentId = enrollment.StudentId,
-        //        CourseId = enrollment.CourseId
+        public EnrollmentViewModel Create(Enrollment entity)
+        {
+            _enrollmentRepository.Add(entity);
+            var enrollment = _enrollmentRepository
+                .Get<Student>(
+                    e => e.StudentId == entity.StudentId
+                );
+            enrollment = _enrollmentRepository
+               .Get<Course>(
+                   e => e.CourseId == entity.CourseId
+               );
+            return new EnrollmentViewModel()
+            {
+                Id = enrollment.Id,
+                StudentId = enrollment.StudentId,
+                CourseId = enrollment.CourseId,
+                Student  = enrollment.Student,
+                Course = enrollment.Course
 
-        //    };
-        //}
+            };
+        }
 
         public void Delete(Enrollment enrollment)
         {
