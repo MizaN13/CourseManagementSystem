@@ -17,7 +17,7 @@ My name is Mizanur Rahman and here is a little information about my technical sk
   
   ### Hybrid App Development ![](https://img.shields.io/badge/Blazor-Hybrid_(Web_and_Mobile)-blue?style=flat&logo=.net)
   ### .NET Ecosystem for Development
-    ![](https://img.shields.io/badge/C%23-Programming_Language-blue?style=flat-square&logo=c-sharp) ![](https://img.shields.io/badge/NET_Core-Platform_Agnostic_Framework-blue?style=flat-square&logo=.net) ![](https://img.shields.io/badge/Blazor_(All_Flavors)-Programming_Model-blue?style=flat-square&logo=.net) ![](https://img.shields.io/badge/Visual_Studio-IDE-blue?style=flat-square&logo=visual-studio) ![](https://img.shields.io/badge/Visual_Studio_Code-Code_Editor-blue?style=flat-square&logo=visual-studio-code)
+    ![](https://img.shields.io/badge/C%23-Programming_Language-blue?style=flat-square&logo=c-sharp) ![](https://img.shields.io/badge/NET_Core-Framework-blue?style=flat-square&logo=.net) ![](https://img.shields.io/badge/Blazor_(All_Flavors)-Programming_Model-blue?style=flat-square&logo=.net) ![](https://img.shields.io/badge/Visual_Studio-IDE-blue?style=flat-square&logo=visual-studio) ![](https://img.shields.io/badge/Visual_Studio_Code-Code_Editor-blue?style=flat-square&logo=visual-studio-code)
   ### Common 
     ![](https://img.shields.io/badge/NuGet-Package_Managers-blue?style=dlat-square&logo=nuget)
      
