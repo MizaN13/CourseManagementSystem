@@ -16,6 +16,7 @@ I am Mizanur Rahman and here is a little information about my technical skills a
     ![](https://img.shields.io/badge/HTML5-Markup_Language-blue?style=flat-square&logo=html5&logoColor=white) ![](https://img.shields.io/badge/CSS-StyleSheets-blue?style=flat-square&logo=css3) ![](https://img.shields.io/badge/JavaScript-Client_Side_Scripting_Language-blue?style=flat-square&logo=javascript) ![](https://img.shields.io/badge/Angular-JS_SPA_Framework-blue?style=flat-square&logo=angular) ![](https://img.shields.io/badge/Blazor-Server,_WASM,_and_PWA-blue?style=flat-square&logo=.net) 
   
   ### Hybrid App Development ![](https://img.shields.io/badge/Blazor-Hybrid_(Web_and_Mobile)-blue?style=flat&logo=.net)
+  ![](https://img.shields.io/badge/Windows-Blazor_Web_(Electron_or_WebWindow)-blue?style=flat-square&logo=windows)
   ### .NET Ecosystem for Development
     ![](https://img.shields.io/badge/C%23-Programming_Language-blue?style=flat-square&logo=c-sharp) ![](https://img.shields.io/badge/NET_Core-Framework-blue?style=flat-square&logo=.net) ![](https://img.shields.io/badge/Blazor_(All_Flavors)-Programming_Model-blue?style=flat-square&logo=.net) ![](https://img.shields.io/badge/Visual_Studio-IDE-blue?style=flat-square&logo=visual-studio) ![](https://img.shields.io/badge/Visual_Studio_Code-Code_Editor-blue?style=flat-square&logo=visual-studio-code)
   ### Common 
