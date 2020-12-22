@@ -1,6 +1,6 @@
 ### Hi there 👋                                                                                                                        
 
-My name is Mizanur Rahman and here is a little information about my technical skills and expertise: [<img align="right" width="400" src="https://github-readme-stats.vercel.app/api?username=MizaN13&&show_icons=true&theme=tokyonight&count_private=true" alt="Mizan's Github Status"/>](https://github.com/MizaN13)  
+I am Mizanur Rahman and here is a little information about my technical skills and expertise: [<img align="right" width="400" src="https://github-readme-stats.vercel.app/api?username=MizaN13&&show_icons=true&theme=tokyonight&count_private=true" alt="Mizan's Github Status"/>](https://github.com/MizaN13)  
 
 - 🔭 I’m currently working on ...   
 - 🌱 I’m currently learning ...                                                       
