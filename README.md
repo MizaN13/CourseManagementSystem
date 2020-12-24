@@ -7,7 +7,9 @@ I am Mizanur Rahman and here is a little information about my technical skills a
 - 🌱 I’m currently learning ...                                                       
     - Docker(Beginner) 
     - UI and UX Design                      [<img align="right" src="https://github-readme-stats.vercel.app/api/top-langs/?username=MizaN13&layout=compact&hide=html&langs_count=7" alt="Mizan's most used Languages" />](https://github.com/MizaN13)
-- 🤔 I’m looking for help with ... Blazor Client side API deal with large dataset  
+- 🤔 I’m looking for help with ... 
+    -Blazor Client side API deal with large dataset
+    -Jenkins Integration for CI/CD pipeline with DockerHub and Github
 - 💬 Let's discuss about ... 
   ### Design, Architecture, Principles & Best Practices                                                                                 
     ![](https://img.shields.io/badge/Containerization_and_Orchetration-Docker,_docker--compose,_swarm-blue?style=flat-square) ![](https://img.shields.io/badge/Patterns_and_Practices-Design_and_Architectural_Patterns_and_Practices-blue?style=flat-square) ![](https://img.shields.io/badge/Coding_Conventions-C%23,_JavaScript,_TypeScript-blue?style=flat-square) ![](https://img.shields.io/badge/Coupling_and_Cohesion-Loosely_vs_Tightly_Coupling_vs_Decoupling_and_High_Cohesion-blue?style=flat-square) ![](https://img.shields.io/badge/Testing-Unit,_Integration-blue?style=flat-square) ![](https://img.shields.io/badge/OOP--blue?style=flat-square&color=white)
@@ -39,7 +41,7 @@ I am Mizanur Rahman and here is a little information about my technical skills a
       "Model-View-Controller (MVC)",
       "Repository", 
       "Unit of Work (UoW)", 
-      "Test Driven Design (TDD)"
+      "Test Driven Development (TDD)"
     ],
   },
   "Process Management": {
