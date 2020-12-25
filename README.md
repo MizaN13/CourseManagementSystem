@@ -25,7 +25,7 @@ I am Mizanur Rahman and here is a little information about my technical skills a
   ### Common 
     ![](https://img.shields.io/badge/NuGet-Package_Managers-blue?style=dlat-square&logo=nuget)
      
-- 📫 How to reach me: ... ![](https://img.shields.io/badge/Email-mizan.441980%40gmail.com-blue?style=social&logo=gmail) ![Connect_LinkedIn](https://img.shields.io/badge/Connect-MizanurRahman-blue?style=social&logo=LinkedIn)
+- 📫 How to reach me: ... ![](https://img.shields.io/badge/Email-mizan.441980%40gmail.com-blue?style=social&logo=gmail) ![Connect_LinkedIn](https://img.shields.io/badge/Connect-MizanR13-blue?style=social&logo=LinkedIn)
 - 😄 Pronouns: ... Full-Stack .NET Developer(Beginner), Programmer Analyst 
 
 
